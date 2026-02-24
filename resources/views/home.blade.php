@@ -1,0 +1,10 @@
+<x-layout>
+    <x-slot:heading>
+        Home Page
+    </x-slot:heading>
+
+  
+   <h1>HEllo im from home page</h1>
+
+
+</x-layout>
