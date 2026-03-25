@@ -4,7 +4,7 @@
     </x-slot:heading>
 
   
-   <h1>HEllo im from home page</h1>
+   
 
 
 </x-layout>

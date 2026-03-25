@@ -2,28 +2,25 @@
 
 namespace App\Models;
 
-class Job{
-   public static function all(): array{
-return [
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-      [
-         'id' => '1',
-         'title' => 'Director',
-         'salary' => '$50,000'
-      ],
-      [
-         'id' => '2',
-         'title' => 'Programmer',
-         'salary' => '$10,000'
-      ],
-      [
-         'id' => '3',
-         'title' => 'Teacher',
-         'salary' => '$40,000'
-      ]
+class Job extends Model{
    
-];
-   }
+   use HasFactory;
+
+   protected $table = 'job_listing';
+
+protected $guarded = [];
+
+public function employer(){
+   return $this->belongsTo(Employer::class);
+}
+
+public function tags(){
+   return $this->belongsToMany(Tag::class, 'job_tags', 'job_listing_id');
+}
+
 }
 
 ?>
